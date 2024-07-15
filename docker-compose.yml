@@ -1,12 +1,10 @@
 version: '3.7'
 
 services:
-
   web:
     build:
       context: .
       dockerfile: Dockerfile
-
     entrypoint: "/app/run_server.sh"
     ports:
       - "80:8000"
@@ -23,16 +21,12 @@ services:
     image: postgres:11-alpine
     volumes:
       - ~/pgsql/quiz_bot:/var/lib/postgresql/data/
-
     environment:
-      - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=postgres
-      - PGPORT=5432
-      - POSTGRES_USER=postgres
-
+      - POSTGRES_PASSWORD=Aslah@123
+      - POSTGRES_DB=quizBot
+      - POSTGRES_USER=aliaslahep
     restart: "on-failure"
 
- # Redis
   redis:
     image: redis
     hostname: redis

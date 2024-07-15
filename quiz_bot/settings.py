@@ -96,7 +96,10 @@ CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
         "CONFIG": {
-            "hosts": [("redis", 6379)],
+            "hosts": [{
+                'address': ('redis-13493.c301.ap-south-1-1.ec2.redns.redis-cloud.com', 13493),
+                'password' :'Aslah@123',
+            }],
         },
     },
 }
@@ -108,11 +111,11 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': env('DB_ENGINE', 'django.db.backends.postgresql'),
-        'NAME': env('DB_NAME', 'postgres'),
-        'USER': env('DB_USER', 'postgres'),
-        'PASSWORD': env('DB_PASSWORD', 'password'),
-        'HOST': env('DB_HOST', 'db'),
-        'PORT': env('DB_PORT', '5432'),
+        'NAME': env('DB_NAME', 'quizBot'),
+        'USER': env('DB_USER', 'aliaslahep'),
+        'PASSWORD': env('DB_PASSWORD', 'Aslah@123'),
+        'HOST': env('DB_HOST', '127.0.0.1'),
+        'PORT': env('DB_PORT', '5433'),
     }
 }
 
